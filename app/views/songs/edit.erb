@@ -1,7 +1,10 @@
 <h1>Edit your song!</h1>
 
 <form method="POST" action="/songs/<%=@song.slug%>">
-  <label>Song Name:<br><input type="text" name="song[name]" value="Song Name" id="Name"></label><br>
+  <label>Song Name: <%=@song.name%><br>
+    
+    <input type="text" name="song[name]" value="<%-@song.name%>" id="Name">
+  </label><br>
 
   <br>
   Genre(s):<br><br>
