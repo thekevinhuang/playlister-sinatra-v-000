@@ -55,7 +55,8 @@ class SongsController < ApplicationController
   end
 
   get "/songs/:slug/edit" do
-
+    @all_gen = Genre.all
+    @all_art = Artist.all
   end
 
 end
