@@ -68,7 +68,7 @@ class SongsController < ApplicationController
   post "/songs/:slug" do
     @song = Song.find_by_slug(params[:slug])
     @song.update(params[:song])
-    
+
     if params["song_genres"]
       if !params["song_genres"]["genres_id"].empty?
         params["song_genres"]["genres_id"].each do |gen|
