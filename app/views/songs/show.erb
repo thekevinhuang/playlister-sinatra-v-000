@@ -1,5 +1,5 @@
 
-<% flash.each do |mess| do %>
+<% if flash.has?(:message) %>
   <%= flash[:message] %>
 <% end %>
 
