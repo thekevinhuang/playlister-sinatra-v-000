@@ -57,7 +57,12 @@ class SongsController < ApplicationController
   get "/songs/:slug/edit" do
     @all_gen = Genre.all
     @all_art = Artist.all
-    erb :'/songs/edit'
+    @song = Song.find_by_slug(params[:slug])
+    if @song
+      erb :'/songs/edit'
+    else
+      redirect to "/songs"
+    end
   end
 
 end
