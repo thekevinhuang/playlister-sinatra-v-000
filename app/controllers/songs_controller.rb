@@ -3,7 +3,8 @@ require 'sinatra/flash'
 
 class SongsController < ApplicationController
   enable :sessions
-
+  register Sinatra::Flash 
+  
   get '/songs' do
     @all_song = Song.all
     erb :'/songs/index'
